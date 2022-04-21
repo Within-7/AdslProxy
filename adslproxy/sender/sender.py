@@ -99,6 +99,8 @@ class Sender(object):
         logger.info('Dial started, remove proxy')
         try:
             self.remove_proxy()
+            # 从代理池删除后，等待5秒再重新拨号
+            time.sleep(5)
         except RetryError:
             logger.error('Retried for max times, continue')
         # 拨号
