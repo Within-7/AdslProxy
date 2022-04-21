@@ -115,7 +115,7 @@ class Sender(object):
                                                                    ip=ip, port=PROXY_PORT)
             else:
                 proxy = '{ip}:{port}'.format(ip=ip, port=PROXY_PORT)
-            time.sleep(10)
+            # time.sleep(10)
             if self.test_proxy(proxy):
                 logger.info(f'Valid proxy {proxy}')
                 # 将代理放入数据库
